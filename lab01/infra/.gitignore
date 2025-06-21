@@ -1,0 +1,15 @@
+# Ignorer les fichiers de variables contenant des secrets
+*.tfvars
+*.tfvars.json
+
+# Ignorer les fichiers d'état locaux
+*.tfstate
+*.tfstate.*
+
+# Ignorer les fichiers de crash log
+crash.log
+crash.*.log
+
+# Ignorer les fichiers de variables d'environnement
+.env
+credentials.txt
