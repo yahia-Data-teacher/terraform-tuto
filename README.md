@@ -49,6 +49,13 @@
   - `-auto-approve` : Skip la confirmation interactive
   - `terraform apply plan.tfplan` : Applique un plan sauvegardé
   - `-target=resource` : Applique les changements uniquement sur une ressource spécifique
+  - `-var="nom_variable=valeur"` : Surcharge une variable lors de l'exécution
+
+Exemple avec variables en ligne de commande :
+```bash
+# Application avec override des variables (utile pour réutiliser un bucket existant)
+terraform apply -var="bucket_name=mon-bucket" -var="create_bucket=false"
+```
 
 ### 5. Destruction de l'infrastructure (`terraform destroy`)
 - Supprime toutes les ressources gérées par Terraform
