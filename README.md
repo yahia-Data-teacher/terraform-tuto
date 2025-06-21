@@ -51,10 +51,16 @@
   - `-target=resource` : Applique les changements uniquement sur une ressource spécifique
   - `-var="nom_variable=valeur"` : Surcharge une variable lors de l'exécution
 
-Exemple avec variables en ligne de commande :
+Exemples d'utilisation des variables :
 ```bash
-# Application avec override des variables (utile pour réutiliser un bucket existant)
+# Application avec variables en ligne de commande (override individuel)
 terraform apply -var="bucket_name=mon-bucket" -var="create_bucket=false"
+
+# Application avec fichier de variables (recommandé pour plusieurs variables)
+terraform apply -var-file="vars/dev.tfvars"
+
+# Combinaison des deux approches (le fichier de variables d'abord, puis les overrides)
+terraform apply -var-file="vars/dev.tfvars" -var="create_bucket=false"
 ```
 
 ### 5. Destruction de l'infrastructure (`terraform destroy`)
